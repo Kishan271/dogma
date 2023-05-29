@@ -1,0 +1,275 @@
+html {
+  font-size: 5vw;
+
+  @media (min-width: 640px) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+}
+
+body {
+  min-width: $base-min-width;
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+//input[type='url'],
+// input[type='date'],
+textarea,
+select {
+  -webkit-appearance: none;
+}
+
+input[type='search'] {
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0; 
+  }
+}
+
+a {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  &.key_focused {
+    outline: 0;
+  }
+
+  &:focus {
+    outline: none;
+
+    .slick-slide &,
+    .slick-dots & {
+      outline: 0;
+    }
+  }
+}
+
+a,
+input,
+button,
+label {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &:focus {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+
+.container {
+
+  @include media-breakpoint-up(md) {
+    max-width: 750px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 970px;
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: 1170px;
+  }
+  @include media-breakpoint-up(xxl) {
+    max-width: 100%;
+    padding: 0 135px;
+  }
+}
+
+button.btn,
+a.btn,
+input.btn {
+  transition: 0.2s linear color, 0.2s linear background, 0.2s linear border;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+
+  &:focus,
+  &:active,
+  &:visited {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    &:active,
+    &.active {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  // &:hover {
+  //   background: #191919;
+  //   border-color: #191919;
+  //   color: #fff;
+  // }
+}
+
+.form-control {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+
+  @include placeholder {
+    color: #000;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.error {
+    border-color: #f00;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  transition: ease 0.3s;
+}
+
+/*btn css*/
+.dg-btn {
+  display: block;
+  color: $white;
+  background-color: $primary;
+  font-weight: 800;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 10px;
+  font-size: rem-calc(10px);
+  padding: rem-calc(10px 15px);
+
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+    padding: 17px 35px;
+  }
+
+  &:hover {
+    background: #F7F9FB;
+    color: $primary;
+  }
+
+  &.dg-hover {
+    background: #F7F9FB;
+    color: $primary;
+
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+}
+
+/*section header css*/
+.section-header {
+  color: #757095;
+  font-family: 'manropemedium';
+  font-size: rem-calc(12px);
+
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+  }
+  
+  .sub-header {
+    color: #3734A9;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: rem-calc(10px);
+    margin-bottom: rem-calc(10px);
+
+    @include media-breakpoint-up(md) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
+
+  h2 {
+    font-family: 'manropebold';
+    color: $black;
+    font-size: rem-calc(16px);
+    
+    @include media-breakpoint-up(md) {
+      font-size: 30px;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: 35px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 50px;
+      letter-spacing: -3px;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 15px;
+    }
+  }
+}
+
+/*overlay css*/
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease 0.5s;
+  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+
+  .nav-active & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+body {
+
+  &.nav-active {
+    overflow: hidden;
+  }
+}

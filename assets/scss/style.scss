@@ -1,0 +1,26 @@
+/*
+Theme Name: Dogma
+Test case css
+*/
+
+@import "vendors/bootstrap/functions";
+@import "vendors/bootstrap/variables";
+@import "bootstrap-custom";
+@import "vendors/bootstrap/mixins";
+
+// @import "bootstrap";
+
+@import 'base/functions';
+@import 'base/mixins';
+@import 'vendors/fonts';
+@import 'base/helpers';
+@import 'base/wp-reset';
+@import 'vendors/slick';
+
+@import 'layout/general';
+@import 'layout/header';
+
+@import 'pages/home';
+
+@import 'layout/footer';
+
