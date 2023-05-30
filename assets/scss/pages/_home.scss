@@ -816,6 +816,8 @@
             width: 100%;
             background: transparent;
             padding: 0 0 10px;
+            border-radius: 0;
+            -webkit-appearance: none;
 
             @include media-breakpoint-down(md) {
                 padding: 0 0 rem-calc(5px);
